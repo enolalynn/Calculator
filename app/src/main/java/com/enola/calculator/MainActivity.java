@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     private String operator, firstNumber , secondNumber;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
         }else {
             binding.tvOperation.setText(firstNumber + " " + this.operator + " " + binding.etCalculator.getText().toString());
         }
-
         binding.tvOperation.setText(binding.etCalculator.getText().toString());
     }
 
@@ -57,12 +57,16 @@ public class MainActivity extends AppCompatActivity {
         int operator = view.getId();
         if (operator == R.id.btAdd) {
             this.operator = "+";
+
         }else if (operator == R.id.btSubtract) {
             this.operator = "-";
+
         }else if (operator == R.id.btMultiply) {
             this.operator = "x";
+
         }else if (operator == R.id.btDivide) {
             this.operator = "/";
+
         }else if (operator == R.id.btEqual) {
             secondNumber = binding.etCalculator.getText().toString();
             calculate(Double.parseDouble(firstNumber), Double.parseDouble(secondNumber));
@@ -70,13 +74,14 @@ public class MainActivity extends AppCompatActivity {
             return ;
         }
         firstNumber = binding.etCalculator.getText().toString();
+        binding.tvOperation.setText(this.operator);
         binding.etCalculator.setText("0");
 
-        }
+    }
 
     private void calculate(double firstNumber, double secondNumber) {
         double result = 0;
-        DecimalFormat df = new DecimalFormat("#.###");
+        DecimalFormat df = new DecimalFormat("#.##");
         if (this.operator.equals("+")) {
             result = firstNumber + secondNumber;
         } else if (this.operator.equals("-")) {
