@@ -7,7 +7,7 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.enosla.calculator"
+        applicationId = "com.enola.calculator"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -22,12 +22,16 @@ android {
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
+
+buildFeatures {
+    viewBinding = true
 }
 
+compileOptions {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+}
 dependencies {
 
     implementation(libs.appcompat)

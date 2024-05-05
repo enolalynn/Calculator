@@ -2,4 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="bt_num">#F9F5F6</color>
+    <color name="operator">#7AA2E3</color>
+    <color name="bt_clear">#333A73</color>
 </resources>
